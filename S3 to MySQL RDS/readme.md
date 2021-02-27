@@ -45,15 +45,15 @@ Now it's time to connect to your database instance with MySQL workbench so you c
 
 Once you’re connected, open a SQL editor and type:
 
-	```
-   	CREATE DATABASE aws_test
-    	```
+```
+CREATE DATABASE aws_test
+```
 
 followed by:
 
-	```
-    	USE aws_test
-    	```
+```
+USE aws_test
+```
 
 Then create a table with a schema that fits your csv file:
 
