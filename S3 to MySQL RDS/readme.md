@@ -40,11 +40,11 @@ In the database overview, select your database and hit 'Modify'. Scroll down to 
 In order to connect to your database instance with MySQL workbench, you need to allow all incoming connections. In order to do so, go to your database, scroll down to 'Security Group Rules' and click on the security group if it has been configured. In the security group page, you will see an 'Inbound rules' tab. Select it and click on 'Edit inbound rules'. Change the source to 'Anywhere'.
 
 <p>
-    <img src="Screenshots/inbound_rules.PNG" width="600" height="250" />
+    <img src="Screenshots/inbound_rules.PNG" width="800" height="250" />
 </p>
 
 <p>
-    <img src="Screenshots/anywhere.PNG" width="600" height="250" />
+    <img src="Screenshots/anywhere.PNG" width="800" height="250" />
 </p>
 
 ### Connect to the MySQl instance with MySQL Workbench
@@ -52,7 +52,7 @@ In order to connect to your database instance with MySQL workbench, you need to 
 Now it's time to connect to your database instance with MySQL workbench so you can run queries. Open MySQL Workbench and click on the + symbol next to MySQL Connections. Pick a connection name and fill in the hostname with the endpoint of your AWS MySQL instance. Username is the one you used when you created the instance on AWS (the default is admin). You can find your username in the 'Configuration' tab of your database on AWS. Once you hit OK, you will be prompted for the password you chose on AWS.
 
 <p>
-    <img src="Screenshots/workbench.PNG" width="600" height="250" />
+    <img src="Screenshots/workbench.PNG" width="800" height="250" />
 </p>
 
 Once you’re connected, open a SQL editor and type:
@@ -82,7 +82,7 @@ CREATE TABLE test (
 In order for your Lambda function to access S3, Cloudwatch (for log files) and the RDS, you need to assign it a role with the relevant permissions. In the AWS management Console, search for IAM. Click on 'Roles' in the left-hand panel and select 'Create Role'. Select use case Lambda and go to Permissions. Select 'AmazonS3FullAccess', 'CloudWatchFullAccess' and 'AmazonRDSFullAccess'. Assign a name to your role and confirm.
 
 <p>
-    <img src="Screenshots/lambda_role.PNG" width="600" height="250" />
+    <img src="Screenshots/lambda_role.PNG" width="800" height="250" />
 </p>
 
 ### Create a Lambda function
@@ -122,7 +122,7 @@ Go back to your Lambda function, click on Layers, scroll down and click 'Add a l
 Now it's finally time to write the actual lambda function that will do the heavy lifting for us. Go to your Lambda function and scroll down to Function Code. Right-click on lambda_function.py and hit 'Open'. 
 
 <p>
-    <img src="Screenshots/code.PNG" width="600" height="250" />
+    <img src="Screenshots/code.PNG" width="800" height="250" />
 </p>
 
 Insert [this code snippet](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/s3_to_mysql.py) into the function. Remember to replace the values for host, database, user and password in lines 27 - 30. Depending on your csv file, you may also want to adjust row 33 with your column names.
@@ -134,5 +134,5 @@ Once that's done, deploy your code.
 Drop [this csv file](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/aws_test_3.csv) into your AWS bucket. Head over to Cloudwatch -> Log Groups in the left panel and click on the log group with our Lambda function name. If everything worked, you should see that 3 rows were successfully inserted into the database. You can now check those rows in MySQL Workbench.
 
 <p>
-    <img src="Screenshots/cloudwatch.PNG" width="600" height="250" />
+    <img src="Screenshots/cloudwatch.PNG" width="800" height="250" />
 </p>
