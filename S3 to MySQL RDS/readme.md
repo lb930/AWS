@@ -20,7 +20,6 @@ Once the bucket has been created, click on it and select 'Create Folder' and giv
 <p>
     <img src="Screenshots/s3_folder.png" width="220" height="240" />
 </p>
-![S3_Folder](/Screenshots/s3_folder.png)
 
 ### Create a MySQL instance
 
