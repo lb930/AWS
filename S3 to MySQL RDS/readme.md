@@ -17,7 +17,7 @@ In the AWS Management Console, navigate to S3. Click on 'Create Bucket' and give
 
 Once the bucket has been created, click on it and select 'Create Folder' and give it a name, eg 'csvdata'.
 
-![](https://raw.githubusercontent.com/lb930/AWS/main/S3%20to%20MySQL%20RDS/Screenshots/s3_folder.PNG)
+![S3 Folder](https://raw.githubusercontent.com/lb930/AWS/main/S3%20to%20MySQL%20RDS/Screenshots/s3_folder.PNG)
 
 ### Create a MySQL instance
 
