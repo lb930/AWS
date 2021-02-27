@@ -114,5 +114,3 @@ Once that's done, deploy your code.
 Drop [this csv file](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/aws_test_3.csv) into your AWS bucket. Head over to Cloudwatch -> Log Groups in the left panel and click on the log group with our Lambda function name. If everything worked, you should see that 3 rows were successfully inserted into the database. You can now check those rows in MySQL Workbench.
 
 ![](https://raw.githubusercontent.com/lb930/AWS/main/S3%20to%20MySQL%20RDS/Screenshots/cloudwatch.PNG)
-
-
