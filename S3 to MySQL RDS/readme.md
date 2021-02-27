@@ -17,7 +17,7 @@ In the AWS Management Console, navigate to S3. Click on 'Create Bucket' and give
 
 Once the bucket has been created, click on it and select 'Create Folder' and give it a name eg 'csvdata'.
 
-![](s3_folder.PNG)
+![](./Screenshots/s3_folder.PNG)
 
 ### Create a MySQL instance
 
@@ -105,7 +105,7 @@ Now it's finally time to write the actual lambda function that will do the heavy
 
 ![](code.PNG)
 
-Insert [this](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/s3_to_mysql.py) into the function. Remember to replace the values for host, database, user and password in lines 27 - 30. Depending on your csv file, you may also want to adjust row 33 with your column names.
+Insert [this code snippet](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/s3_to_mysql.py) into the function. Remember to replace the values for host, database, user and password in lines 27 - 30. Depending on your csv file, you may also want to adjust row 33 with your column names.
 
 Once that's done, deploy your code.
 
