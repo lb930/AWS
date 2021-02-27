@@ -26,7 +26,7 @@ Once the bucket has been created, click on it and select 'Create Folder' and giv
 Search for RDS in the AWS Management Console. Navigate to 'Database' in the left-hand panel and click on 'Create database'. Select 'Easy Create' and MySQL. This will come with predetermined seetings. It also means that the database won't be accessible publicly, which we will change later on. Make sure you create it in the same region as your S3 bucket.
 
 <p>
-    <img src="Screenshots/mysql_aws.PNG" width="600" height="250" />
+    <img src="Screenshots/mysql_aws.PNG" width="600" height="300" />
 </p>
 
 Give it a name (the default value is database-1), pick a username and a password. You will need this information later. Click on 'Create Database'. It will now take a few minutes before the instance goes live.
@@ -52,7 +52,7 @@ In order to connect to your database instance with MySQL workbench, you need to 
 Now it's time to connect to your database instance with MySQL workbench so you can run queries. Open MySQL Workbench and click on the + symbol next to MySQL Connections. Pick a connection name and fill in the hostname with the endpoint of your AWS MySQL instance. Username is the one you used when you created the instance on AWS (the default is admin). You can find your username in the 'Configuration' tab of your database on AWS. Once you hit OK, you will be prompted for the password you chose on AWS.
 
 <p>
-    <img src="Screenshots/workbench.PNG" width="700" height="300" />
+    <img src="Screenshots/workbench.PNG" width="700" height="330" />
 </p>
 
 Once you’re connected, open a SQL editor and type:
