@@ -57,13 +57,13 @@ USE aws_test
 
 Then create a table with a schema that fits your csv file:
 
-	```
-	CREATE TABLE test (
-    	text_col VARCHAR(40),
-    	number_col INT,
-    	date_col DATE
-    	)
-	```
+```
+CREATE TABLE test (
+    text_col VARCHAR(40),
+    number_col INT,
+    date_col DATE
+)
+```
 
 ### Create a Lambda role
 
