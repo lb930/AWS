@@ -2,7 +2,22 @@
 
 ## Description
 
-This tutorial describes how to ingest csv files from S3 to a MySQL RDS on AWS. The pipeline is powered by a Lambda function which is triggered as soon as a file is dropped into the S3 bucket. Upon successful ingestion, the file is deleted from S3 to keep the storage clean.
+This tutorial describes how to push csv files from a local directory to S3 and how to ingest them into a MySQL RDS on AWS. The pipeline is powered by a Lambda function which is triggered as soon as a file is dropped into the S3 bucket. Once the file has been ingested, it is moved into Glacier.
+
+## Table of Contents
+
+- [Prerequisits](#Prerequisits)
+- [Step-by-Step Guide](#Step-by-Step-Guide)
+- [Create an S3 Bucket](#Create-an-S3Create-an-S3-Bucket)
+- [Create a Lifecycle rule](#Create-a-Lifecycle-rule)
+- [Write a script to push data to S3](#Write-a-script-to-push-data-to-S3)
+- [Create a MySQL instance](#Create-a-MySQL-instance)
+- [Connect to the MySQl instance with MySQL Workbench](#Connect-to-the-MySQl-instance-with-MySQL-Workbench)
+- [Create a Lambda role](#Create-a-Lambda-role)
+- [Create a Lambda function](#Create-a-Lambda-function)
+- [Add a Lambda Layer](#Add-a-Lambda-Layer)
+- [Write the Lambda function](#Write-the-Lambda-function)
+- [Execute the script](#Execute-the-script)
 
 ## Prerequisits
 
@@ -21,9 +36,27 @@ Once the bucket has been created, click on it and select 'Create Folder' and giv
     <img src="Screenshots/s3_folder.PNG" width="600" height="250" />
 </p>
 
+### Create a Lifecycle rule
+
+Navigate to your S3 bucket and click on the 'Management' tab. You can now create a lifecycle rule to move the csv files from the standard S3 storage into an archive. Click on 'Create lifecycle rule' and assign it a name. Enter 'csvdata/' as prefix so the rule is only applied to this specific folder. In the 'Lifecycle rule actions' section, select 'Transition current versions of objects between storage classes' and pick a storage class. We are going to move everything to Glacier after 1 day. Acknowledge the ocst warning and create the rule.
+
+<p>
+    <img src="Screenshots/glacier.PNG" width="600" height="350" />
+</p>
+
+### Write a script to push data to S3
+
+We are going to write a Python script that pushes all files in a local directory to S3.
+
+First, you will need your access key and secret access key from the IAM console. You can find the access key under Users -> User Name -> Security Credentials. If you can't remember your secret access key, you can generate a new one by creating a new access key. It will only be visible when creating the key, so remember to write it down.
+
+Next, create a [Python file](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/secrets.py) that contains both your access key and secret access key (that's obviously not best practice, but it's sufficient for this tutorial).
+
+[This script](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/import_to_s3.py) will allow you to push data to S3.
+
 ### Create a MySQL instance
 
-Search for RDS in the AWS Management Console. Navigate to 'Database' in the left-hand panel and click on 'Create database'. Select 'Easy Create' and MySQL. This will come with predetermined seetings. It also means that the database won't be accessible publicly, which we will change later on. Make sure you create it in the same region as your S3 bucket.
+Search for RDS in the AWS Management Console. Navigate to 'Database' in the left-hand panel and click on 'Create database'. Select 'Easy Create' and MySQL. This will come with predetermined seetings. It also means that the database won't be accessible publicly, which we will change later on. Make sure you create it in the same region as your S3 bucket. 
 
 <p>
     <img src="Screenshots/mysql_aws.PNG" width="600" height="250" />
@@ -117,7 +150,7 @@ Go back to your Lambda function and click on Layers in the left pane. Create a l
 
 Go back to your Lambda function, click on Layers, scroll down and click 'Add a layer'. Select 'Custom layer' and use the one you have just created. 
 
-### Write the Lambda function.
+### Write the Lambda function
 
 Now it's finally time to write the actual lambda function that will do the heavy lifting for us. Go to your Lambda function and scroll down to Function Code. Right-click on lambda_function.py and hit 'Open'. 
 
@@ -131,7 +164,7 @@ Once that's done, deploy your code.
 
 ### Execute the script
 
-Drop [this csv file](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/aws_test_3.csv) into your AWS bucket. Head over to Cloudwatch -> Log Groups in the left panel and click on the log group with our Lambda function name. If everything worked, you should see that 3 rows were successfully inserted into the database. You can now check those rows in MySQL Workbench.
+In the command line, navigate to your folder containing the files you'd like to upload and execute the script that pushes data to S3 ([this one](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/import_to_s3.py)). Head over to Cloudwatch -> Log Groups and click on the log group with our Lambda function name. If everything worked, you should see that 3 rows were successfully inserted into the database. You can now check those rows in MySQL Workbench.
 
 <p>
     <img src="Screenshots/cloudwatch.PNG" width="800" height="250" />

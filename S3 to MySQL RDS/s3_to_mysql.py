@@ -20,7 +20,6 @@ def lambda_handler(event, context):
     lines = csv_file_obj['Body'].read().decode('utf-8').split()
     for row in csv.DictReader(lines):
         result.append(row.values())
-
     
     try:
         # Connect to DBS
@@ -35,9 +34,6 @@ def lambda_handler(event, context):
         cursor.executemany(mysql_empsql_insert_query, result)
         connection.commit()
         print(cursor.rowcount, "record(s) inserted successfully into table")
-
-        # Delete the file from S3 once it's been ingested into MySQL
-        s3_client.delete_object(Bucket=bucket, Key=csv_file)
 
     except Exception as err:
         print ("Error -"+str(err))
