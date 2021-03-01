@@ -33,7 +33,7 @@ In the AWS Management Console, navigate to S3. Click on 'Create Bucket' and give
 Once the bucket has been created, click on it and select 'Create Folder' and give it a name, eg 'csvdata'.
 
 <p>
-    <img src="Screenshots/s3_folder.PNG" width="600" height="250" />
+    <img src="Screenshots/s3_folder.png" width="600" height="250" />
 </p>
 
 ### Create a Lifecycle rule
@@ -59,7 +59,7 @@ Next, create a [Python file](https://github.com/lb930/AWS/blob/main/S3%20to%20My
 Search for RDS in the AWS Management Console. Navigate to 'Database' in the left-hand panel and click on 'Create database'. Select 'Easy Create' and MySQL. This will come with predetermined seetings. It also means that the database won't be accessible publicly, which we will change later on. Make sure you create it in the same region as your S3 bucket. 
 
 <p>
-    <img src="Screenshots/mysql_aws.PNG" width="600" height="250" />
+    <img src="Screenshots/mysql_aws.PNG" width="600" height="300" />
 </p>
 
 Give it a name (the default value is database-1), pick a username and a password. You will need this information later. Click on 'Create Database'. It will now take a few minutes before the instance goes live.
@@ -67,17 +67,17 @@ Give it a name (the default value is database-1), pick a username and a password
 In the database overview, select your database and hit 'Modify'. Scroll down to 'Connectivity' and 'Additional configuration' and set it to 'Publicly accessible. Confirm your changes.
 
 <p>
-    <img src="Screenshots/public_access.PNG" width="600" height="250" />
+    <img src="Screenshots/public_access.PNG" width="450" height="250" />
 </p>
 
 In order to connect to your database instance with MySQL workbench, you need to allow all incoming connections. In order to do so, go to your database, scroll down to 'Security Group Rules' and click on the security group if it has been configured. In the security group page, you will see an 'Inbound rules' tab. Select it and click on 'Edit inbound rules'. Change the source to 'Anywhere'.
 
 <p>
-    <img src="Screenshots/inbound_rules.PNG" width="800" height="250" />
+    <img src="Screenshots/inbound_rules.PNG" width="750" height="250" />
 </p>
 
 <p>
-    <img src="Screenshots/anywhere.PNG" width="800" height="250" />
+    <img src="Screenshots/anywhere.PNG" width="750" height="250" />
 </p>
 
 ### Connect to the MySQl instance with MySQL Workbench
@@ -85,7 +85,7 @@ In order to connect to your database instance with MySQL workbench, you need to 
 Now it's time to connect to your database instance with MySQL workbench so you can run queries. Open MySQL Workbench and click on the + symbol next to MySQL Connections. Pick a connection name and fill in the hostname with the endpoint of your AWS MySQL instance. Username is the one you used when you created the instance on AWS (the default is admin). You can find your username in the 'Configuration' tab of your database on AWS. Once you hit OK, you will be prompted for the password you chose on AWS.
 
 <p>
-    <img src="Screenshots/workbench.PNG" width="800" height="250" />
+    <img src="Screenshots/workbench.PNG" width="700" height="330" />
 </p>
 
 Once you’re connected, open a SQL editor and type:
@@ -115,7 +115,7 @@ CREATE TABLE test (
 In order for your Lambda function to access S3, Cloudwatch (for log files) and the RDS, you need to assign it a role with the relevant permissions. In the AWS management Console, search for IAM. Click on 'Roles' in the left-hand panel and select 'Create Role'. Select use case Lambda and go to Permissions. Select 'AmazonS3FullAccess', 'CloudWatchFullAccess' and 'AmazonRDSFullAccess'. Assign a name to your role and confirm.
 
 <p>
-    <img src="Screenshots/lambda_role.PNG" width="800" height="250" />
+    <img src="Screenshots/lambda_role.PNG" width="750" height="250" />
 </p>
 
 ### Create a Lambda function
@@ -125,7 +125,7 @@ Select Lambda from the AWS Management Console. Go to 'Create function' and selec
 Next, we want to create a trigger that executes the Lambda function. Go to your function and click on 'Create Trigger. In the trigger section, choose S3. Select the bucket you created for this project and choose 'All objects create events' as  event type. In the prefix section, select the folder csvdata/ and in the suffix section, type .csv. Acknowledge the recursive invocation statement at the bottom and add the trigger.
 
 <p>
-    <img src="Screenshots/lambda_function.PNG" width="600" height="250" />
+    <img src="Screenshots/lambda_function.PNG" width="750" height="250" />
 </p>
 
 ### Add a Lambda Layer
@@ -155,7 +155,7 @@ Go back to your Lambda function, click on Layers, scroll down and click 'Add a l
 Now it's finally time to write the actual lambda function that will do the heavy lifting for us. Go to your Lambda function and scroll down to Function Code. Right-click on lambda_function.py and hit 'Open'. 
 
 <p>
-    <img src="Screenshots/code.PNG" width="800" height="250" />
+    <img src="Screenshots/code.PNG" width="950" height="270" />
 </p>
 
 Insert [this code snippet](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/s3_to_mysql.py) into the function. Remember to replace the values for host, database, user and password in lines 27 - 30. Depending on your csv file, you may also want to adjust row 33 with your column names.
