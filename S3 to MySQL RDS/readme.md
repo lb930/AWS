@@ -80,7 +80,7 @@ In order to connect to your database instance with MySQL workbench, you need to 
     <img src="Screenshots/anywhere.PNG" width="750" height="250" />
 </p>
 
-### Connect to the MySQl instance with MySQL Workbench
+### Connect to the MySQL instance with MySQL Workbench
 
 Now it's time to connect to your database instance with MySQL workbench so you can run queries. Open MySQL Workbench and click on the + symbol next to MySQL Connections. Pick a connection name and fill in the hostname with the endpoint of your AWS MySQL instance. Username is the one you used when you created the instance on AWS (the default is admin). You can find your username in the 'Configuration' tab of your database on AWS. Once you hit OK, you will be prompted for the password you chose on AWS.
 
