@@ -1,6 +1,6 @@
 # Move Files between S3 folders
 
-Use the boto3 copy_object() and delete_object() method to move files between S3 buckets.
+Use the boto3 ```copy_object()``` and ```delete_object() method to move files between S3 buckets.
 
 ## Folder Structure
 ```bash
