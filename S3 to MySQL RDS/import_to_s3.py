@@ -1,6 +1,8 @@
-from secrets import access_key, secret_access
 import boto3 
 import os
+
+access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+secret_access = os.environ.get('AWS_SECRET_ACCESS_KEY_ID')
 
 s3_client = boto3.client('s3', aws_access_key_id = access_key, aws_secret_access_key = secret_access)
 
