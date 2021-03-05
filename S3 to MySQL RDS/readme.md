@@ -48,9 +48,7 @@ Navigate to your S3 bucket and click on the 'Management' tab. You can now create
 
 We are going to write a Python script that pushes all files in a local directory to S3.
 
-First, you will need your access key and secret access key from the IAM console. You can find the access key under Users -> User Name -> Security Credentials. If you can't remember your secret access key, you can generate a new one by creating a new access key. It will only be visible when creating the key, so remember to write it down.
-
-Next, create a [Python file](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/secrets.py) that contains both your access key and secret access key (that's obviously not best practice, but it's sufficient for this tutorial).
+First, you will need your access key and secret access key from the IAM console. You can find the access key under Users -> User Name -> Security Credentials. If you can't remember your secret access key, you can generate a new one by creating a new access key. It will only be visible when creating the key, so remember to store it as environment variable.
 
 [This script](https://github.com/lb930/AWS/blob/main/S3%20to%20MySQL%20RDS/import_to_s3.py) will allow you to push data to S3.
 
