@@ -29,8 +29,8 @@ Creates a role for our lambda function and gives it full access to S3 and CloudW
 
 - aws_lambda_permission: Gives an external source (here: S3) permission to access the Lambda function.
 
-- aws_lambda_function: assigns a role and the Python script to the Lambda function. It also ensures that an updated Python function gets pushed to AWS
+- aws_lambda_function: assigns a role and the Python script to the Lambda function. It also ensures that an updated Python function gets pushed to AWS.
 
-- aws_s3_bucket_notification: Creates a trigger
+- aws_s3_bucket_notification: Creates a trigger.
 
 
