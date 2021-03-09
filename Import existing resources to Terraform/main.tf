@@ -1,3 +1,7 @@
+resource "aws_s3_bucket" "backup-bucket-luisa" {
+  bucket = "backup-bucket-luisa"
+}
+
 resource "aws_s3_bucket_public_access_block" "backup-bucket-luisa" {
   
     bucket = aws_s3_bucket.backup-bucket-luisa.id
