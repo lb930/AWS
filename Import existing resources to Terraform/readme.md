@@ -4,10 +4,10 @@ First, create the [configuration file](https://github.com/lb930/AWS/blob/main/Im
 
 Initialise Terraform in your directory and use the ```import``` command to import your resource.
 
-*Syntax*
+**Syntax**
 
 ```terraform import [options] ADDRESS ID```
 
-*Example*
+**Example**
 
 ```terraform import aws_s3_bucket_public_access_block.backup-bucket-luisa backup-bucket-luisa```
