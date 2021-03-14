@@ -12,7 +12,7 @@ This tutorial describes how to push csv files from a local directory to S3 and h
 - [Create a Lifecycle rule](#Create-a-Lifecycle-rule)
 - [Write a script to push data to S3](#Write-a-script-to-push-data-to-S3)
 - [Create a MySQL instance](#Create-a-MySQL-instance)
-- [Connect to the MySQl instance with MySQL Workbench](#Connect-to-the-MySQl-instance-with-MySQL-Workbench)
+- [Connect to the MySQL instance with MySQL Workbench](#Connect-to-the-MySQl-instance-with-MySQL-Workbench)
 - [Create a Lambda role](#Create-a-Lambda-role)
 - [Create a Lambda function](#Create-a-Lambda-function)
 - [Add a Lambda Layer](#Add-a-Lambda-Layer)
