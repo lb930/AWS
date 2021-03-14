@@ -4,6 +4,8 @@
 
 I'm using the Youtube API to pull channel statistics (total views, number of subscribers, number of videos) for my favourite Youtubers. The script runs once a day and is scheduled as cron job on AWS. The data is stored in csv files in an S3 bucket and ingested into a MySQL database instance. The database is automatically started 20 minutes before the API script runs and stopped 5 minutes after the data has been ingested to reduce uptime.
 
+[Detailed setup of the pipeline](https://github.com/lb930/AWS/tree/main/S3%20to%20MySQL%20RDS)
+
 ## Starting and stopping the database
 
 In order to minimise costs, the database is only briefly active to ingest data from csv files. [Start RDS](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Start-RDS-Lambda/lambda_function.py) and [Stop RDS](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Stop-RDS-Lambda/lambda_function.py) have been scheduled as cron job. A detailed tutorial can be found [here](https://www.totalcloud.io/blog/how-to-schedule-rds-instances-with-an-aws-lambda-function) or [here](https://www.sqlshack.com/automatically-start-stop-an-aws-rds-sql-server-using-aws-lambda-functions/).
