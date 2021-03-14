@@ -1,0 +1,59 @@
+ #image1 {
+     max-width: 50%;
+     height: auto;
+     filter: grayscale(100%);
+     position: relative;
+     top: 20px;
+ }
+
+
+ #image2 {
+     max-width: 50%;
+     height: auto;
+     filter: grayscale(100%);
+     position: relative;
+     top: 50px;
+ }
+
+
+ #image1:hover {
+     filter: grayscale(0%);
+ }
+
+ #image2:hover {
+     filter: grayscale(0%);
+ }
+
+ .titles {
+     display: none;
+ }
+
+ .images:hover .titles {
+     display: block;
+ }
+
+ /*.image1:hover .titles {
+     display: block;
+ }
+
+ .image2:hover .titles {
+     display: block;
+ }
+
+ */
+ body {
+     background: url(images/Pj6QB0%20rev.jpg);
+     background-size: cover;
+     background-attachment: fixed;
+     color: black
+ }
+
+ .container {
+     margin-left: 30%;
+     margin-right: 20%;
+     background-color: aliceblue
+         /*background-image: url(images/40%20Music%20Bars%20Wallpaper%20on%20WallpaperSafari%20rev.jpg);
+     background-position: center;
+     background-size: cover;
+     */
+ }

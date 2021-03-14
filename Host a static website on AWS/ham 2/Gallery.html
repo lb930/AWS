@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>lesson in formatting</title>
+    <link rel="stylesheet" type="text/css" href="Gallery.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1 style="font-family: cursive">Gallery</h1>
+            <h5 style="font-family: fantasy">(Trick or Treat when you Hit The Image)</h5>
+            <br>
+
+        </center>
+
+        <center>
+            <div class="images">
+
+                <a href="https://www.allstudios.co.uk/studios/dry-longterm/uneti-studios">
+                    <img id="image1" src="images/studio%20photo.jpg" width=500px /></a>
+                <br>
+                <br>
+                <p class="titles">All Saints Control Room</p>
+
+                <a href=" https://www.headbox.com/en/spaces/7465-book-music-studio-cloud-9-london">
+                    <img id="image2" src="images/piano%20photo.jpg" height=500 width=500>
+                </a>
+                <br>
+                <br>
+                <br>
+                <p class="titles">Live Room</p>
+            </div>
+        </center>
+        <!--these will default if the picture element is not supported by the browser-->
+        <br>
+        <p style="text-align: center"><a href="H.A.M..html">Take Me Back</a></p><br>
+        <picture>
+            <source src=" images/studio%202.png" media="(max-width:400px)">
+            <source src="images/piano%20photo.jpg">
+        </picture>
+    </div>
+</body>
+
+</html>

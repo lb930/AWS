@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+}
+
+.welcomebody {
+    margin-top: 10%;
+
+    background-size: cover;
+    font-family: cursive;
+
+}
+
+#enterlink {
+    font-size: 80px;
+    color: aliceblue
+}
+
+#imagediv {
+    padding: 0%
+}

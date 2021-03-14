@@ -1,0 +1,173 @@
+#navigation,
+ul,
+li {
+    list-style: none;
+    float: left;
+    padding-left: 10px;
+}
+
+#navigationlinksdiv {
+    background-color: rgb(42, 42, 42);
+    overflow: hidden;
+    color: aliceblue;
+}
+
+a.hover {
+    text-decoration: none;
+}
+
+
+
+a {
+    color: white;
+    padding: 5px;
+
+}
+
+a:hover {
+    text-decoration: none;
+    background: rgb(60, 59, 55);
+}
+
+body {
+    background: url("images/Pj6QB0%20rev.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, Verdana, sans-serif;
+    line-height: normal;
+    width: 70%;
+    margin: auto;
+    color: azure;
+}
+
+
+
+#bookingslink {
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+    padding: 3px;
+}
+
+#gallerylink {
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+    padding: 3px;
+}
+
+.container {
+    background-image: url("images/0BIj2e.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: local
+}
+
+img {
+    margin-left: 25%;
+    text-align: center;
+    padding-top: 15%
+}
+
+#pCloud {
+
+    width: 60%;
+    height: auto;
+}
+
+#table2,
+tr,
+td,
+th {
+
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+#table1 {
+    width: 70%;
+}
+
+th {
+    background-color: black;
+    color: white
+}
+
+caption {
+    color: darkred;
+    font-weight: bold
+}
+
+#enquiries {
+    width: 50%;
+    height: 30%;
+    text-align: left;
+}
+
+}
+
+#imagediv {}
+
+#welcomediv {
+    /*margin: 30%;
+    padding: .5%;
+    border: .02% solid #FF0;*/
+    /*margin-left: 39%;
+    margin-right: 32%;
+    */
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    background-image: url(images/40%20Music%20Bars%20Wallpaper%20on%20WallpaperSafari%20rev.jpg);
+    background-size: auto
+        /*--color: rgb(18, 180, 255)*/
+        color: black;
+    font-variant: small-caps;
+    font-family: cursive;
+    font-weight: bold
+}
+
+#audiodiv {
+    display: block;
+    border-radius: 20px;
+    width: 20%;
+    float: right
+}
+
+
+#enterlink {
+    text-align: center;
+    font-family: cursive;
+    font-size: 50px
+}
+
+#studiobookings1 {
+    margin-left: 25%;
+    float: left;
+    font-family: cursive;
+    font-size: 20px;
+    padding-right: 20%;
+
+}
+
+#bookingpricelist {
+    float: left;
+    position: relative;
+    left: -10%;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+
+#fieldsetforms {
+    background-image: url(images/40%20Music%20Bars%20Wallpaper%20on%20WallpaperSafari%20rev.jpg);
+    background-attachment: fixed;
+}
+
+#contactform {
+    /*padding-left: 25%;
+    */
+    position: relative;
+    left: 25%;
+}
