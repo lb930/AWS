@@ -4,6 +4,11 @@
 
 This tutorial describes how to push csv files from a local directory to S3 and how to ingest them into a MySQL RDS on AWS. The pipeline is powered by a Lambda function which is triggered as soon as a file is dropped into the S3 bucket. Once the file has been ingested, it is moved into Glacier.
 
+<p>
+    <img src="Screenshots/project.PNG" width="600" height="250" />
+</p>
+
+
 ## Table of Contents
 
 - [Prerequisits](#Prerequisits)
@@ -12,7 +17,7 @@ This tutorial describes how to push csv files from a local directory to S3 and h
 - [Create a Lifecycle rule](#Create-a-Lifecycle-rule)
 - [Write a script to push data to S3](#Write-a-script-to-push-data-to-S3)
 - [Create a MySQL instance](#Create-a-MySQL-instance)
-- [Connect to the MySQl instance with MySQL Workbench](#Connect-to-the-MySQl-instance-with-MySQL-Workbench)
+- [Connect to the MySQL instance with MySQL Workbench](#Connect-to-the-MySQl-instance-with-MySQL-Workbench)
 - [Create a Lambda role](#Create-a-Lambda-role)
 - [Create a Lambda function](#Create-a-Lambda-function)
 - [Add a Lambda Layer](#Add-a-Lambda-Layer)
