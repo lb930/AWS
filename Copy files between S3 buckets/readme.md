@@ -3,7 +3,7 @@
 Use the boto3 ```copy_object()``` and ```delete_object()``` method to move files between S3 buckets.
 
 <p>
-    <img src="Screenshots/project.PNG" width="480" height="100" />
+    <img src="Screenshots/project.PNG" width="450" height="100" />
 </p>
 
 ## Folder Structure
