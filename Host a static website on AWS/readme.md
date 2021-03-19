@@ -49,7 +49,7 @@ In the AWS Management Console, navigate to S3. Click on 'Create Bucket' and give
 This allows read access to your bucket. In your S3 dashboard, you should now be able to see a 'Public' bucket.
 
 <p>
-    <img src="Screenshots/public_bucket.PNG" width="550" height="20" />
+    <img src="Screenshots/public_bucket.PNG" width="500" height="20" />
 </p>
 
 Upload your website content to the S3 bucket.
@@ -89,7 +89,7 @@ Copy and paste all 4 values under the 'Value/Route traffic to' from your Route 5
 In AWS, navigate to Certificate Manager. Request a public certificate and enter your domain name (my-aws-domain.tk). Select DNS validation and request your certificate. While the validation is pending, expand the Domain section under Status and click on the 'Create Record in Route 53' button.
 
 <p>
-    <img src="Screenshots/certificate.png" width="520" height="180" />
+    <img src="Screenshots/certificate.png" width="500" height="190" />
 </p>
 
 ### CloudFront
