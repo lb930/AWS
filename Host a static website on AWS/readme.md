@@ -17,6 +17,7 @@ This project hosts a static website designed by [Tanaka Jera](https://www.linked
 - [Create a Domain Name](#Create-a-Domain-Name)
 - [Set up Route 53](#Set-up-Route-53)
 - [AWS Certificate Manager](#AWS-Certificate-Manager)
+- [CloudFront](#CloudFront)
 
 ## Prerequisits
 
