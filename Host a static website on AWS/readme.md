@@ -5,7 +5,7 @@
 This project hosts a static website designed by [Tanaka Jera](https://www.linkedin.com/in/tjera/) on AWS using S3, Route 53, Certificate Manager and CloudFront. The contents of the website are stored in a public S3 bucket. When a user goes to our domain name Route 53 routes the user to CloudFront. CloudFront gets an https certificate from AWS Certificate Manager and serves the website from an S3 bucket to the user.
 
 <p>
-    <img src="Screenshots/project.PNG" width="450" height="185" />
+    <img src="Screenshots/project.PNG" width="400" height="185" />
 </p>
 
 ## Table of Contents
@@ -75,7 +75,7 @@ Copy the domain name that you just created in Freenom (my-aws-domain.tk) and pas
 Now go back to Freenom and click on 'Manage Domain' next to your domain name. Next, click on Management Tools -> Nameservers
 
 <p>
-    <img src="Screenshots/freenom_mgmt.PNG" width="550" height="50" />
+    <img src="Screenshots/freenom_mgmt.PNG" width="550" height="40" />
 </p>
 
 Copy and paste all 4 values under the 'Value/Route traffic to' from your Route 53 NS record into your nameservers on Freenom and confirm with 'Change Namservers.
@@ -89,7 +89,7 @@ Copy and paste all 4 values under the 'Value/Route traffic to' from your Route 5
 In AWS, navigate to Certificate Manager. Request a public certificate and enter your domain name (my-aws-domain.tk). Select DNS validation and request your certificate. While the validation is pending, expand the Domain section under Status and click on the 'Create Record in Route 53' button.
 
 <p>
-    <img src="Screenshots/certificate.png" width="520" height="200" />
+    <img src="Screenshots/certificate.png" width="520" height="180" />
 </p>
 
 ### CloudFront
