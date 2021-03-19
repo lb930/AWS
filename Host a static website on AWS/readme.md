@@ -5,7 +5,7 @@
 This project hosts a static website designed by [Tanaka Jera](https://www.linkedin.com/in/tjera/) on AWS using S3, Route 53, Certificate Manager and CloudFront. The contents of the website are stored in a public S3 bucket. When a user goes to our domain name Route 53 routes the user to CloudFront. CloudFront gets an https certificate from AWS Certificate Manager and serves the website from an S3 bucket to the user.
 
 <p>
-    <img src="Screenshots/project.PNG" width="600" height="185" />
+    <img src="Screenshots/project.PNG" width="400" height="185" />
 </p>
 
 ## Table of Contents
@@ -49,7 +49,7 @@ In the AWS Management Console, navigate to S3. Click on 'Create Bucket' and give
 This allows read access to your bucket. In your S3 dashboard, you should now be able to see a 'Public' bucket.
 
 <p>
-    <img src="Screenshots/public_bucket.PNG" width="600" height="50" />
+    <img src="Screenshots/public_bucket.PNG" width="500" height="20" />
 </p>
 
 Upload your website content to the S3 bucket.
@@ -75,13 +75,13 @@ Copy the domain name that you just created in Freenom (my-aws-domain.tk) and pas
 Now go back to Freenom and click on 'Manage Domain' next to your domain name. Next, click on Management Tools -> Nameservers
 
 <p>
-    <img src="Screenshots/freenom_mgmt.PNG" width="550" height="200" />
+    <img src="Screenshots/freenom_mgmt.PNG" width="550" height="40" />
 </p>
 
 Copy and paste all 4 values under the 'Value/Route traffic to' from your Route 53 NS record into your nameservers on Freenom and confirm with 'Change Namservers.
 
 <p>
-    <img src="Screenshots/nameservers.png" width="550" height="200" />
+    <img src="Screenshots/nameservers.png" width="500" height="200" />
 </p>
 
 ### AWS Certificate Manager
@@ -89,7 +89,7 @@ Copy and paste all 4 values under the 'Value/Route traffic to' from your Route 5
 In AWS, navigate to Certificate Manager. Request a public certificate and enter your domain name (my-aws-domain.tk). Select DNS validation and request your certificate. While the validation is pending, expand the Domain section under Status and click on the 'Create Record in Route 53' button.
 
 <p>
-    <img src="Screenshots/certificate.PNG" width="550" height="200" />
+    <img src="Screenshots/certificate.png" width="500" height="190" />
 </p>
 
 ### CloudFront
