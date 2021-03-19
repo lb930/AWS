@@ -89,7 +89,7 @@ Copy and paste all 4 values under the 'Value/Route traffic to' from your Route 5
 In AWS, navigate to Certificate Manager. Request a public certificate and enter your domain name (my-aws-domain.tk). Select DNS validation and request your certificate. While the validation is pending, expand the Domain section under Status and click on the 'Create Record in Route 53' button.
 
 <p>
-    <img src="Screenshots/certificate.PNG" width="550" height="200" />
+    <img src="Screenshots/certificate.png" width="550" height="200" />
 </p>
 
 ### CloudFront
