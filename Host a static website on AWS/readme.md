@@ -49,7 +49,7 @@ In the AWS Management Console, navigate to S3. Click on 'Create Bucket' and give
 This allows read access to your bucket. In your S3 dashboard, you should now be able to see a 'Public' bucket.
 
 <p>
-    <img src="Screenshots/public_bucket.PNG" width="500" height="20" />
+    <img src="Screenshots/public_bucket.PNG" width="490" height="20" />
 </p>
 
 Upload your website content to the S3 bucket.
