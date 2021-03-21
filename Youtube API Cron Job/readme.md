@@ -51,4 +51,4 @@ I set an alarm that sends an email whenever data has or hasn't been uploaded to 
 }
 ```
 
-On successful upload it will send a simply email stating that data was ingested into the database. If the upload fails, it will reference the error message.
+On successful upload it will send a simple email stating that data was ingested into the database. If the upload fails, it will reference the error message.
