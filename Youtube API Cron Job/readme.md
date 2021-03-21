@@ -12,11 +12,11 @@ I'm using the Youtube API to pull channel statistics (total views, number of sub
 
 ## Starting and stopping the database
 
-In order to minimise costs, the database is only briefly active to ingest data from csv files. [Start RDS](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Start-RDS-Lambda/lambda_function.py) and [Stop RDS](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Stop-RDS-Lambda/lambda_function.py) have been scheduled as cron job. A detailed tutorial can be found [here](https://www.totalcloud.io/blog/how-to-schedule-rds-instances-with-an-aws-lambda-function) or [here](https://www.sqlshack.com/automatically-start-stop-an-aws-rds-sql-server-using-aws-lambda-functions/).
+In order to minimise costs, the database is only briefly active to ingest data from csv files. [Start RDS](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Start-RDS-Lambda/lambda_function.py) and [Stop RDS](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Stop-RDS-Lambda/lambda_function.py) have been scheduled as cron jobs. A detailed tutorial can be found [here](https://www.totalcloud.io/blog/how-to-schedule-rds-instances-with-an-aws-lambda-function) or [here](https://www.sqlshack.com/automatically-start-stop-an-aws-rds-sql-server-using-aws-lambda-functions/).
 
 ## Youtube API
 
-[youtube.py](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Youtube-API-Lambda/youtube.py) does the heavy lifting of calling the API and retrieving channel ID, channel name, views, subscribers and video count from the official Youtube API. The script generates a new csv file every day which is stored on S3. The function is called in the lamda handler which runs once a day.
+[youtube.py](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Youtube-API-Lambda/youtube.py) does the heavy lifting of calling the API and retrieving channel ID, channel name, views, subscribers and video count from the official Youtube API. The script generates a new csv file every day which is stored on S3. The function is called in the Lambda handler which runs once a day.
 
 ## S3 to MySQL database ingestion.
 
