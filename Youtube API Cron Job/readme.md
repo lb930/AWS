@@ -21,3 +21,34 @@ In order to minimise costs, the database is only briefly active to ingest data f
 ## S3 to MySQL database ingestion.
 
 Once all the data has been saved on S3, it is [automatically uploaded](https://github.com/lb930/AWS/blob/main/Youtube%20API%20Cron%20Job/Youtube-S3-to-MySQl-Lambda/lambda_function.py) to a RDS instance where it can be queried and analysed.
+
+## Sending an email notification
+
+I set an alarm that sends an email whenever data has or hasn't been uploaded to the database. I registered my email with Amazon SES and created an IAM policy that allowed SES to send emails. The IAM policy was attached to the Lambda role responsible for uploading data to the RDS.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail",
+                "ses:SendRawEmail"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+On successful upload it will send a simply email stating that data was ingested into the database. If the upload fails, it will reference the error message.
