@@ -4,6 +4,8 @@ import mysql.connector
 from mysql.connector import Error
 from mysql.connector import errorcode
 from datetime import datetime
+from email_success import email_success_func
+from email_fail import email_fail_func
 
 s3_client = boto3.client('s3')
 
@@ -34,9 +36,10 @@ def lambda_handler(event, context):
         cursor.executemany(mysql_empsql_insert_query, result)
         connection.commit()
         print(cursor.rowcount, "record(s) inserted successfully into test table")
-
+        email_success_func()
     
     except Exception as err:
         print ("Error -"+str(err))
+        email_fail_func(str(err))
         
     return {'statusCode': 200}
