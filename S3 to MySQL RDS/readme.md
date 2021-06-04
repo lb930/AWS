@@ -13,7 +13,7 @@ This tutorial describes how to push csv files from a local directory to S3 and h
 
 - [Prerequisits](#Prerequisits)
 - [Step-by-Step Guide](#Step-by-Step-Guide)
-- [Create an S3 Bucket](#Create-an-S3Create-an-S3-Bucket)
+- [Create an S3 Bucket](#Create-an-S3-Bucket)
 - [Create a Lifecycle rule](#Create-a-Lifecycle-rule)
 - [Write a script to push data to S3](#Write-a-script-to-push-data-to-S3)
 - [Create a MySQL instance](#Create-a-MySQL-instance)
