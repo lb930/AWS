@@ -1,6 +1,6 @@
 ### Copy file from S3 to a local directory
 
-#### Prerequesites
+#### Prerequisites
 
 - AWS Access Key
 - AWS Secret Access Key
